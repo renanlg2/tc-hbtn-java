@@ -1,10 +1,10 @@
 public class Numero {
-    public static int resultado = 0;
     public static void dividir(int a, int b){
+        int resultado = 0;
+
         try {
-             resultado = a / b;
-        } catch (Exception ex) {
-            resultado = 0;
+            resultado = a / b;
+        } catch (Exception e){
             System.out.println("Nao eh possivel dividir por zero");
         } finally {
             System.out.println(a + " / " + b + " = " + resultado);
