@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="0x00-java-hello_world"/>
+	<classpathentry kind="src" path="0x01/maiusculo"/>
+	<classpathentry kind="src" path="0x01/numeros"/>
+	<classpathentry kind="src" path="0x01/pares"/>
+	<classpathentry kind="src" path="0x01/somar"/>
+	<classpathentry kind="src" path="0x02/divisao"/>
+	<classpathentry kind="src" path="exceptions"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
