@@ -15,6 +15,7 @@ public class ContaBancariaTarifada extends ContaBancariaBasica {
         this.quantidadeTransacoes += quantidade;
     }
 
+    @Override
     public void sacar(double valor) throws OperacaoInvalidaException {
         if (valor > 0){
             if (valor <= getSaldo()){
@@ -30,6 +31,7 @@ public class ContaBancariaTarifada extends ContaBancariaBasica {
         }
     }
 
+    @Override
     public void depositar(double valor) throws OperacaoInvalidaException {
         if (valor > 0){
             super.depositar(valor);
