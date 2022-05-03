@@ -8,6 +8,6 @@ public class LivroEdicaoOuro extends Livro{
     }
 
     public double getPreco() {
-        return super.preco + (super.preco * 1.3);
+        return super.preco * 1.3;
     }
 }
