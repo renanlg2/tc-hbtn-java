@@ -1,7 +1,7 @@
 package exceptions;
 
 public class OperacaoInvalidaException extends Exception {
-    OperacaoInvalidaException(String message){
+    public OperacaoInvalidaException(String message){
         super(message);
     }
 }
