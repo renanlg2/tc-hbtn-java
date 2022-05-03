@@ -12,7 +12,7 @@ public class Empregado {
 
     public double calcularBonus(Departamento departamento){
         if (departamento.alcancouMeta()){
-            this.valorBonus = (this.salarioFixo * 10) / 100;
+            this.valorBonus = this.salarioFixo * 0.1;
         } else {
             this.valorBonus = 0;
         }
