@@ -26,13 +26,9 @@ public class Retangulo extends FormaGeometrica {
         }
     }
 
-    public Retangulo(){
-        System.out.println("Retangulo eh uma subclasse de FormaGeometrica");
-    }
-
     @Override
     public double area(){
-        return this.getAltura() * this.getAltura();
+        return this.getLargura() * this.getAltura();
     }
 
     @Override
