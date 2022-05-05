@@ -21,6 +21,7 @@ public class Quadrado extends Retangulo{
         return "[Quadrado] " + String.format("%.2f", getLado());
     }
 
+    @Override
     public double area(){
         return Math.pow(getLado(), 2);
     }
