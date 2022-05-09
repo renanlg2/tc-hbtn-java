@@ -12,8 +12,15 @@ public class Loggi implements ProvedorFrete{
             valorFrete = valor * 0.04;
         }
 
-        Frete frete = new Frete(TipoProvedorFrete.LOGGI, valorFrete);
+        Frete frete = new Frete(obterTipoProvedorFrete(), valorFrete);
 
         return frete;
     }
+
+    @Override
+    public TipoProvedorFrete obterTipoProvedorFrete() {
+        return TipoProvedorFrete.LOGGI;
+    }
+
+
 }
