@@ -20,7 +20,7 @@
 - Esta classe terá uma lista de objetos que irá armazenar os canais passados pelo programa Program.java
 - O método registrarCanal() irá receber um novo canal como parâmetro, e este será adicionado a essa lista mencionada anteriormente
 - O método processar() irá percorrer essa lista de canais, e a cada item dessa lista será criada uma nova notificação pelo método notificar() (e este irá escrever a mensagem no console)
-  public void processar(Video video){
+  - public void processar(Video video){
    for (CanalNotificacao canal : canais){
      canal.notificar(new Mensagem(video.getArquivo() + " - " + video.getFormatoVideo(), TipoMensagem.LOG));
    }
