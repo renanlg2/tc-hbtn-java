@@ -21,10 +21,10 @@
 - O método registrarCanal() irá receber um novo canal como parâmetro, e este será adicionado a essa lista mencionada anteriormente
 - O método processar() irá percorrer essa lista de canais, e a cada item dessa lista será criada uma nova notificação pelo método notificar() (e este irá escrever a mensagem no console)
   - public void processar(Video video){
-   for (CanalNotificacao canal : canais){
-     canal.notificar(new Mensagem(video.getArquivo() + " - " + video.getFormatoVideo(), TipoMensagem.LOG));
-   }
-  }
+  - for (CanalNotificacao canal : canais){
+    - canal.notificar(new Mensagem(video.getArquivo() + " - " + video.getFormatoVideo(), TipoMensagem.LOG));
+  - }
+  - }
     - Podemos observar atentamente ao método processar, que ele recebe como parâmetro uma variável tipo Video.
       Com este parâmetro, iremos conseguir obter os dados do vídeo, como nome do arquivo, e formato.      
     
