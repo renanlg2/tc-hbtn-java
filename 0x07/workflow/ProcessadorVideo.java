@@ -12,7 +12,5 @@ public class ProcessadorVideo {
         for (CanalNotificacao canal : canais){
             canal.notificar(new Mensagem(video.getArquivo() + " - " + video.getFormatoVideo(), TipoMensagem.LOG));
         }
-
-
     }
 }

@@ -7,6 +7,7 @@ public class LivroEdicaoOuro extends Livro{
         super(titulo, autor, preco);
     }
 
+    @Override
     public double getPreco() {
         return super.preco * 1.3;
     }

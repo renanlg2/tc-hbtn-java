@@ -6,6 +6,7 @@ public class Livro {
     public String autor;
     public double preco;
 
+
     public Livro(String titulo, String autor, double preco) throws LivroInvalidoException, AutorInvalidoException {
         if (titulo.length() >= 3) {
             setTitulo(titulo);
