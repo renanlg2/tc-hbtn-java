@@ -5,13 +5,12 @@ public class InteiroPositivo {
         setValor(valor);
     }
 
-    public int getValor() {
-        return valor;
+    public InteiroPositivo(String valor){
+        setValor(new Integer(valor));
     }
 
-    public InteiroPositivo(String valor){
-        Integer valorInt = new Integer(valor);
-        setValor(valorInt);
+    public int getValor() {
+        return valor;
     }
 
     public void setValor(int valor) {
@@ -23,11 +22,12 @@ public class InteiroPositivo {
     }
 
     public boolean ehPrimo(){
-        if (this.valor == 1){
+        if (this.valor == 1) {
             return false;
         }
 
         boolean ehPrimo = true;
+
         for (int i = 2; i < this.valor; i++ ){
             if (this.valor % i == 0){
                 ehPrimo = false;
