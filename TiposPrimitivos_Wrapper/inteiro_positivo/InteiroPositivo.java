@@ -1,11 +1,11 @@
 public class InteiroPositivo {
     private int valor;
 
-    public InteiroPositivo(int valor){
+    public InteiroPositivo(int valor) throws IllegalArgumentException{
         setValor(valor);
     }
 
-    public InteiroPositivo(String valor){
+    public InteiroPositivo(String valor) throws IllegalArgumentException{
         setValor(new Integer(valor));
     }
 
@@ -13,7 +13,7 @@ public class InteiroPositivo {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(int valor) throws IllegalArgumentException{
         if (valor >= 0){
             this.valor = valor;
         } else {
@@ -22,7 +22,7 @@ public class InteiroPositivo {
     }
 
     public boolean ehPrimo(){
-        if (this.valor == 1) {
+        if (this.valor <= 1) {
             return false;
         }
 
@@ -30,12 +30,11 @@ public class InteiroPositivo {
 
         for (int i = 2; i < this.valor; i++ ){
             if (this.valor % i == 0){
-                ehPrimo = false;
-                break;
+                return false;
             }
         }
 
-        return ehPrimo;
+        return true;
     }
 }
 
