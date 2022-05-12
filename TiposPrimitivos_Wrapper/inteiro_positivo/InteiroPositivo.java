@@ -38,3 +38,4 @@ public class InteiroPositivo {
         return ehPrimo;
     }
 }
+
