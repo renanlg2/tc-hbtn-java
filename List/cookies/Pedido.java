@@ -21,14 +21,13 @@ public class Pedido {
     public int removerSabor(String sabor){
         int quantidadeRemovida = 0;
 
-        for (Iterator<PedidoCookie> pedidoCookie = cookies.iterator(); pedidoCookie.hasNext();){
-            if (pedidoCookie.hasNext()){
-                PedidoCookie proximoPedido = pedidoCookie.next();
-//
-                if (proximoPedido.getSabor().equals(sabor)){
-                    quantidadeRemovida += proximoPedido.getQuantidadeCaixas();
-                    pedidoCookie.remove();
-                }
+        Iterator<PedidoCookie> pedidoIterator = this.cookies.iterator();
+
+        while (pedidoIterator.hasNext()){
+            PedidoCookie pedidoAtual = pedidoIterator.next();
+            if (pedidoAtual.getSabor().equals(sabor)){
+                quantidadeRemovida += pedidoAtual.getQuantidadeCaixas();
+                pedidoIterator.remove();
             }
         }
 
