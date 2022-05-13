@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 
 public class ListaTodo {
-    private ArrayList<Tarefa> tarefas = new ArrayList<Tarefa>();
+    private ArrayList<Tarefa> tarefas;
+
+    public ListaTodo(){
+        tarefas = new ArrayList<Tarefa>();
+    }
 
     public void adicionarTarefa(Tarefa tarefa) throws Exception{
-        if (tarefa.getDescricao().equals(null) || tarefa.getDescricao().equals(""))
-            throw new Exception("Descricao de tarefa invalida");
-
         for (Tarefa tarefaIndividual : this.tarefas){
             if (tarefaIndividual.getIdentificador() == tarefa.getIdentificador())
                 throw new Exception("Tarefa com identificador " + tarefa.getIdentificador() + " ja existente na lista");

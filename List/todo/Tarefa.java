@@ -3,8 +3,8 @@ public class Tarefa {
     private boolean estahFeita;
     private int identificador;
 
-    public Tarefa(String descricao, int identificador){
-        setDescricao(descricao);
+    public Tarefa(String descricao, int identificador) throws Exception {
+        modificarDescricao(descricao);
         setIdentificador(identificador);
     }
 
@@ -32,7 +32,11 @@ public class Tarefa {
         this.identificador = identificador;
     }
 
-    public void modificarDescricao(String descricao){
+    public void modificarDescricao(String descricao) throws Exception {
+
+        if (descricao.equals(null) || descricao.equals(""))
+            throw new Exception("Descricao de tarefa invalida");
+
         setDescricao(descricao);
     }
 }
