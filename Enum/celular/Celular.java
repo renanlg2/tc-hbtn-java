@@ -33,7 +33,6 @@ public class Celular {
             throw new IllegalArgumentException("Nao foi possivel modificar contato. Contato jah existente com esse nome");
         }
 
-
         this.contatos.set(obterPosicaoContato(contatoAntigo.getNome()), novoContato);
     }
 
