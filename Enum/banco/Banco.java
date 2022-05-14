@@ -66,7 +66,7 @@ public class Banco {
                     int contadorTransacao = 0;
                     for (double transacao : cliente.getTransacoes()){
                         contadorTransacao += 1;
-                        System.out.println("[" + contadorTransacao + "] valor " + transacao);
+                        System.out.println("  [" + contadorTransacao + "] valor " + transacao);
                     }
                 }
             }
