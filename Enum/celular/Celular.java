@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Celular {
-    private ArrayList<Contato> listaContatos = new ArrayList<Contato>();
+    private ArrayList<Contato> contatos = new ArrayList<Contato>();
 
     public int obterPosicaoContato(String nome){
 
-        for (Contato contato : listaContatos){
+        for (Contato contato : contatos){
             if (contato.getNome().equals(nome)){
-                return listaContatos.indexOf(contato);
+                return contatos.indexOf(contato);
             }
         }
 
@@ -17,7 +17,7 @@ public class Celular {
 
     public void adicionarContato(Contato contato){
         if (obterPosicaoContato(contato.getNome()) == -1){
-            this.listaContatos.add(contato);
+            this.contatos.add(contato);
         } else {
             throw new IllegalArgumentException("Nao foi possivel adicionar contato. Contato jah existente com esse nome");
         }
@@ -34,11 +34,11 @@ public class Celular {
         }
 
 
-        this.listaContatos.set(obterPosicaoContato(contatoAntigo.getNome()), novoContato);
+        this.contatos.set(obterPosicaoContato(contatoAntigo.getNome()), novoContato);
     }
 
     public void removerContato(Contato contato){
-        Iterator<Contato> iteratorContato = this.listaContatos.iterator();
+        Iterator<Contato> iteratorContato = this.contatos.iterator();
         boolean contatoEncontrado = false;
 
         while (iteratorContato.hasNext()){
@@ -56,7 +56,7 @@ public class Celular {
     }
 
     public void listarContatos(){
-        for (Contato contato : this.listaContatos){
+        for (Contato contato : this.contatos){
             System.out.println(contato.getNome() + " -> " + contato.getTelefone() + " (" + contato.getTipo() + ")");
         }
     }
