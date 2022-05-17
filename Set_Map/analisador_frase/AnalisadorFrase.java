@@ -7,14 +7,12 @@ public class AnalisadorFrase {
       String[] palavras = texto.split(" ");
 
       for (String palavra : palavras) {
-         if (!palavra.equals("?") && !palavra.equals(".") && !palavra.equals("!")) {
-            String palavraMinuscula = palavra.toLowerCase().replace("!","").replace(".","").replace("?","");
+         String palavraMinuscula = palavra.toLowerCase().replace("!","").replace(".","").replace("?","");
 
-            if (listaPalavras.get(palavraMinuscula) == null) {
-               listaPalavras.put(palavraMinuscula, 1);
-            } else {
-               listaPalavras.put(palavraMinuscula, listaPalavras.get(palavraMinuscula) + 1);
-            }
+         if (listaPalavras.get(palavraMinuscula) == null) {
+            listaPalavras.put(palavraMinuscula, 1);
+         } else {
+            listaPalavras.put(palavraMinuscula, listaPalavras.get(palavraMinuscula) + 1);
          }
       }
 
