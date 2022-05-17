@@ -9,6 +9,7 @@ public class AnalisadorFrase {
       for (String palavra : palavras) {
          if (!palavra.equals("?") && !palavra.equals(".") && !palavra.equals("!")) {
             String palavraMinuscula = palavra.toLowerCase();
+            palavraMinuscula = palavraMinuscula.replace("!","").replace(".","").replace("?","");
 
             if (listaPalavras.get(palavraMinuscula) == null) {
                listaPalavras.put(palavraMinuscula, 1);
