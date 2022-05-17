@@ -2,7 +2,7 @@ import java.util.TreeMap;
 
 public class AnalisadorFrase {
    public static TreeMap contagemPalavras(String texto){
-      TreeMap<String, Integer> listaPalavras = new TreeMap<String, Integer>();
+      TreeMap<String, Integer> listaPalavras = new TreeMap<>();
 
       String[] palavras = texto.split(" ");
 
