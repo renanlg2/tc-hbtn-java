@@ -42,6 +42,7 @@ public class Telefone {
     @Override
     public int hashCode() {
         // Reference: https://youtu.be/7V3589CReug?t=332
+        // I needed to use the code bellow to make a correct output
         int hash = 7;
         hash = 31 * hash + Objects.hashCode(this.codigoArea);
         hash = 31 * hash + Objects.hashCode(this.numero);
