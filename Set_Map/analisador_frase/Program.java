@@ -9,6 +9,8 @@ public class Program {
         TreeMap<String, Integer> contagemFrase5 = AnalisadorFrase.contagemPalavras("Pilha de palha e telha velha. Palha na pilha e velha telha. Pilha de telha e palha velha.");
         TreeMap<String, Integer> contagemFrase6 = AnalisadorFrase.contagemPalavras("Embaixo da pia tem um pinto que pia, quanto mais a pia pinga mais o pinto pia!");
 
+
+
         System.out.println(contagemFrase1);
         System.out.println(contagemFrase2);
         System.out.println(contagemFrase3);
