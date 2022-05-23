@@ -51,6 +51,6 @@ public class Autor implements Comparable<Autor> {
 
     @Override
     public int hashCode() {
-        return 31 * this.nome.hashCode();
+        return Objects.hash(nome);
     }
 }

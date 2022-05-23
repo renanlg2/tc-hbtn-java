@@ -65,7 +65,10 @@ public class Post implements Comparable<Post>{
 
     @Override
     public int hashCode() {
-        return Objects.hash(autor.toString(), titulo.toLowerCase());
+//        int hash = 7;
+//        hash = 31 * hash + Objects.hashCode(this.getAutor());
+//        hash = 31 * hash + Objects.hashCode(this.getTitulo());
+        return Objects.hashCode(this.getTitulo());
     }
 
     @Override

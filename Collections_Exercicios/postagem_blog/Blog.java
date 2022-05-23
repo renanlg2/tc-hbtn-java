@@ -1,12 +1,5 @@
 import java.util.*;
 
-class PostsByAutor implements Comparator<Autor>{
-    @Override
-    public int compare(Autor autor, Autor autorObj) {
-        return autor.compareTo(autorObj);
-    }
-}
-
 public class Blog {
 
     private List<Post> posts;
@@ -62,14 +55,18 @@ public class Blog {
     }
 
     public Set<Post> obterPostsPorCategoria(Categorias categoria){
-        Set<Post> postsCategoria = new HashSet<Post>();
+        List<Post> listaPostsCategoria = new ArrayList<Post>();
+        Set<Post> postsCategoria = new TreeSet<Post>();
 
         for (Post post : this.posts){
-
             if (post.getCategoria().equals(categoria)){
-                postsCategoria.add(post);
+                listaPostsCategoria.add(post);
             }
         }
+
+        Collections.sort(listaPostsCategoria);
+        postsCategoria.addAll(listaPostsCategoria);
+
 
         return postsCategoria;
     }
@@ -122,6 +119,8 @@ public class Blog {
                 }
             }
         }
+
+        Collections.sort(listaAutores);
 
         return listaPostAutores;
     }
