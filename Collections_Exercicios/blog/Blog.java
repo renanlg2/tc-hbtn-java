@@ -21,7 +21,7 @@ public class Blog {
     }
 
     public Set<String> obterTodosAutores(){
-        Set<String> getTodosAutores = new HashSet<String>();
+        Set<String> getTodosAutores = new TreeSet<String>();
 
         Collections.sort(posts);
 
@@ -33,7 +33,7 @@ public class Blog {
     }
 
     public Map<String, Integer> obterContagemPorCategoria(){
-        Map<String, Integer> getContagemCategoria = new HashMap<String, Integer>();
+        Map<String, Integer> getContagemCategoria = new TreeMap<String, Integer>();
 
         Collections.sort(posts, new PostByCategory());
 
