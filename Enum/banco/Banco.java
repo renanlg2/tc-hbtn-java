@@ -57,6 +57,7 @@ public class Banco {
 
     public boolean listarClientes(String nomeAgencia, boolean imprimeTransacoes){
         Agencia agencia = buscarAgencia(nomeAgencia);
+
         if (agencia != null){
             int contadorCliente = 0;
             for (Cliente cliente : agencia.getClientes()){
