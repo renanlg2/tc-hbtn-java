@@ -75,47 +75,52 @@ public class Blog {
     }
 
     public Map<Categorias, Set<Post> > obterTodosPostsPorCategorias(){
-        Set<Categorias> listaCategorias = new HashSet<Categorias>();
-        Set<Post> listaPosts = new HashSet<Post>();
-        Map<Categorias, Set<Post> > listaCategoriaPost = new HashMap<Categorias, Set<Post> >();
+        List<Categorias> listaCategorias = new ArrayList<Categorias>();
+        Set<Post> postCategoria = new TreeSet<Post>();
+        Map<Categorias, Set<Post>> listaPostCategorias = new TreeMap<Categorias, Set<Post>>();
 
-        Collections.sort(this.posts);
-
-        for (Post post : this.posts){
+        for (Post post: this.posts) {
             if (!listaCategorias.contains(post.getCategoria()))
                 listaCategorias.add(post.getCategoria());
         }
 
+        Collections.sort(listaCategorias);
+
         for (Categorias categoria : listaCategorias){
             for (Post post: this.posts) {
                 if (post.getCategoria().equals(categoria)){
-                    if (!listaPosts.contains(post)){
-                        listaPosts.add(post);
+                    if (!listaPostCategorias.containsKey(categoria)){
+                        postCategoria = new TreeSet<Post>();
                     }
+
+                    postCategoria.add(post);
+                    listaPostCategorias.put(categoria, postCategoria);
                 }
             }
-
-            listaCategoriaPost.put(categoria, listaPosts);
         }
 
-        return listaCategoriaPost;
+        return listaPostCategorias;
     }
 
     public Map<Autor, Set<Post>> obterTodosPostsPorAutor(){
-        Set<Autor> listaAutores = obterTodosAutores();
-        Set<Post> listaPosts = new HashSet<Post>();
-        Map<Autor, Set<Post>> listaPostAutores = new HashMap<Autor, Set<Post>>();
+        List<Autor> listaAutores = new ArrayList<Autor>();
+        Set<Post> postAutor = new TreeSet<Post>();
+        Map<Autor, Set<Post>> listaPostAutores = new TreeMap<Autor, Set<Post> >();
+
+        listaAutores.addAll(obterTodosAutores());
+        Collections.sort(listaAutores);
 
         for (Autor autor : listaAutores){
-            for (Post post : this.posts){
+            for (Post post: this.posts) {
                 if (post.getAutor().equals(autor)){
-                    if (!listaPosts.contains(post)){
-                        listaPosts.add(post);
+                    if (!listaPostAutores.containsKey(autor)){
+                        postAutor = new TreeSet<Post>();
                     }
+
+                    postAutor.add(post);
+                    listaPostAutores.put(autor, postAutor);
                 }
             }
-
-            listaPostAutores.put(autor, listaPosts);
         }
 
         return listaPostAutores;
