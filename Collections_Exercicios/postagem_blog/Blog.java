@@ -67,7 +67,6 @@ public class Blog {
         Collections.sort(listaPostsCategoria);
         postsCategoria.addAll(listaPostsCategoria);
 
-
         return postsCategoria;
     }
 
@@ -124,4 +123,6 @@ public class Blog {
 
         return listaPostAutores;
     }
+
+
 }
