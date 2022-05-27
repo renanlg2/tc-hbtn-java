@@ -4,7 +4,7 @@ import java.util.function.Supplier;
 public class Produto{
     private String nome;
     private double preco;
-    private double percentualMarkUp = 10;
+    private double percentualMarkUp;
 
     public Supplier<Double> precoComMarkUp = () -> this.preco + (this.preco * this.percentualMarkUp / 100);
 
@@ -13,6 +13,7 @@ public class Produto{
     public Produto(double preco, String nome) {
         this.preco = preco;
         this.nome = nome;
+        this.percentualMarkUp = 10;
     }
 
     public String getNome() {
