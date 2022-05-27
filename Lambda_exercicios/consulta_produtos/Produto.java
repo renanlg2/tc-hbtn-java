@@ -36,8 +36,8 @@ public class Produto {
     @Override
     public String toString(){
         return  this.getNome() + " " +
-                this.getPreco() + " " +
-                this.getPeso() + " " +
+                String.format("%,6f", this.getPreco()) + " " +
+                String.format("%,6f", this.getPeso()) + " " +
                 this.getQuantidadeEmEstoque() + " " +
                 this.getTipo();
     }
