@@ -6,8 +6,9 @@ public class ConsultaProdutos {
         List<Produto> listaFiltrada = new ArrayList<>();
 
         lista.forEach(produto -> {
-            if(criterioFiltro.testar(produto))
+            if(criterioFiltro.testar(produto)){
                 listaFiltrada.add(produto);
+            }
         });
 
         return listaFiltrada;
