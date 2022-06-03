@@ -9,7 +9,7 @@ public class SerializarEstudantes<Estudante> {
         this.nomeArquivo = nomeArquivo;
     }
 
-    public void serializar(List<Estudante> lista) throws Exception {
+    public void serializar(List<Estudante> lista) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
 
@@ -33,20 +33,18 @@ public class SerializarEstudantes<Estudante> {
     public List<Estudante> desserializar() {
         FileInputStream fio = null;
         ObjectInputStream ois = null;
-        List<Estudante> listaEstudante = new ArrayList<>();
+        List<Estudante> listaEstudantes = new ArrayList<Estudante>();
 
         try {
             fio = new FileInputStream(nomeArquivo);
             ois = new ObjectInputStream(fio);
 
-            listaEstudante = (List<Estudante>) ois.readObject();
-
-            if (listaEstudante != null){
-                return listaEstudante;
-            }
-
-        } catch (IOException | ClassNotFoundException e){
+            listaEstudantes = (List<Estudante>) ois.readObject();
+            return listaEstudantes;
+        } catch (IOException e){
             System.out.println("Nao foi possivel desserializar");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         } finally {
             if (ois != null){
                 try {
