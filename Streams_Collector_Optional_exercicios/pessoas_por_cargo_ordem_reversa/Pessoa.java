@@ -55,7 +55,7 @@ public class Pessoa implements Comparable<Pessoa>{
 
     @Override
     public String toString() {
-        return "[" + this.getCodigo() + "]" +
+        return "[" + this.getCodigo() + "] " +
                 this.getNome() + " " +
                 this.getCargo() + " " +
                 this.getIdade() + " R$ " +
