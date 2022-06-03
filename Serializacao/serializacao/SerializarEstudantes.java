@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SerializarEstudantes<Estudante> {
@@ -36,7 +37,8 @@ public class SerializarEstudantes<Estudante> {
         try {
             fio = new FileInputStream(nomeArquivo);
             ois = new ObjectInputStream(fio);
-            List<Estudante> listaEstudante = (List<Estudante>) ois.readObject();
+            List<Estudante> listaEstudante = new ArrayList<>();
+            listaEstudante = (List<Estudante>) ois.readObject();
 
             if (listaEstudante != null){
                 return listaEstudante;
@@ -51,7 +53,6 @@ public class SerializarEstudantes<Estudante> {
                 } catch (IOException e){
                     System.out.println("Erro ao fechar o arquivo");
                 }
-
             }
         }
 
