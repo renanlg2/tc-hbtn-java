@@ -16,13 +16,13 @@ public class SerializarEstudantes<Estudante> {
             fos = new FileOutputStream(nomeArquivo);
             oos = new ObjectOutputStream(fos);
             oos.writeObject(lista);
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("Nao foi possivel serializar");
         } finally {
             if (oos != null){
                 try {
                     oos.close();
-                } catch (IOException e){
+                } catch (IllegalArgumentException e){
                     System.out.println("Erro ao fechar o arquivo");
                 }
             }
@@ -42,7 +42,7 @@ public class SerializarEstudantes<Estudante> {
                 return listaEstudante;
             }
 
-        } catch (Exception e){
+        } catch (IllegalArgumentException e){
             System.out.println("Nao foi possivel desserializar");
         } finally {
             if (ois != null){
