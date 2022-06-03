@@ -38,7 +38,7 @@ public class SerializarEstudantes<Estudante> {
         try {
             fio = new FileInputStream(nomeArquivo);
             ois = new ObjectInputStream(fio);
-            listaEstudantes = (List<Estudante>) ois.readObject();
+            listaEstudantes = (List<Estudante>)ois.readObject();
             return listaEstudantes;
         } catch (ClassNotFoundException e){
             System.out.println("Classe não encontrada");
@@ -55,6 +55,5 @@ public class SerializarEstudantes<Estudante> {
         }
 
         return listaEstudantes;
-
     }
 }
