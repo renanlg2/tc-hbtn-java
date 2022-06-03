@@ -31,20 +31,18 @@ public class SerializarEstudantes<Estudante> {
     }
 
     public List<Estudante> desserializar() {
+        List<Estudante> listaEstudantes = null;
         FileInputStream fio = null;
         ObjectInputStream ois = null;
-        List<Estudante> listaEstudantes = new ArrayList<Estudante>();
 
         try {
             fio = new FileInputStream(nomeArquivo);
             ois = new ObjectInputStream(fio);
 
             listaEstudantes = (List<Estudante>) ois.readObject();
-            return listaEstudantes;
-        } catch (IOException e){
+
+        } catch (IOException | ClassNotFoundException e){
             System.out.println("Nao foi possivel desserializar");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         } finally {
             if (ois != null){
                 try {
@@ -55,6 +53,7 @@ public class SerializarEstudantes<Estudante> {
             }
         }
 
-        return null;
+        return listaEstudantes;
+
     }
 }
