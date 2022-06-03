@@ -17,7 +17,7 @@ public class SerializarEstudantes<Estudante> {
             fos = new FileOutputStream(nomeArquivo);
             oos = new ObjectOutputStream(fos);
             oos.writeObject(lista);
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Nao foi possivel serializar");
         } finally {
             if (oos != null){
