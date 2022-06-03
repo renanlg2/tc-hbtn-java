@@ -30,7 +30,7 @@ public class SerializarEstudantes<Estudante> {
         }
     }
 
-    public List<Estudante> desserializar() throws Exception{
+    public List<Estudante> desserializar() throws IOException{
         List<Estudante> listaEstudantes = null;
         FileInputStream fio = null;
         ObjectInputStream ois = null;
