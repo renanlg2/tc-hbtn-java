@@ -36,7 +36,10 @@ public class Telefone {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Telefone telefone = (Telefone) o;
-        return this.getCodigoArea() != null && this.getNumero() != null && this.getCodigoArea().equals(telefone.getCodigoArea()) && this.getNumero().equals(telefone.getNumero());
+        return this.getCodigoArea() != null &&
+               this.getNumero() != null &&
+               this.getCodigoArea().equals(telefone.getCodigoArea()) &&
+               this.getNumero().equals(telefone.getNumero());
     }
 
     @Override

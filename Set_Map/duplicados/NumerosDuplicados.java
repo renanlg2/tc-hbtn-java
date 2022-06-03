@@ -7,7 +7,7 @@ public class NumerosDuplicados {
         TreeSet<Integer> numerosDuplicados = new TreeSet<Integer>();
         HashSet<Integer> hashNumeros = new HashSet<Integer>();
 
-        for (Integer numero : numeros){
+        for (int numero : numeros){
             if (!hashNumeros.add(numero)){
                 numerosDuplicados.add(numero);
             }

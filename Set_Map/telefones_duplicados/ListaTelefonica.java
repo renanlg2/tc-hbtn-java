@@ -21,12 +21,12 @@ public class ListaTelefonica {
             telefoneLista = new HashSet<Telefone>();
         }
 
-        // Validate if the number exists to another people
+        // Validate if the number exists to this name
         if (telefoneLista.contains(telefone))
             throw new IllegalArgumentException("Telefone jah existente para essa pessoa");
 
         // Validate if the number exists to another people
-        Iterator<HashSet<Telefone>> iteratorTelefone = dadosPessoais.values().iterator();
+        Iterator< HashSet<Telefone> > iteratorTelefone = dadosPessoais.values().iterator();
         while (iteratorTelefone.hasNext()){
             for ( Telefone telIndividual : iteratorTelefone.next()){
                 if (telIndividual.equals(telefone)){
