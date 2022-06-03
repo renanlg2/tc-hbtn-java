@@ -5,6 +5,7 @@ public class SerializarEstudantes<T> {
     private String nomeArquivo;
 
     public SerializarEstudantes(String nomeArquivo) {
+        super();
         this.nomeArquivo = nomeArquivo;
     }
 
@@ -16,7 +17,10 @@ public class SerializarEstudantes<T> {
             fos = new FileOutputStream(nomeArquivo);
             oos = new ObjectOutputStream(fos);
             oos.writeObject(lista);
-        } catch (IOException e) {
+        } catch (FileNotFoundException e) {
+            System.out.println("Nao foi possivel serializar");
+        }
+        catch (IOException e) {
             System.out.println("Nao foi possivel serializar");
         } finally {
             if (oos != null){
@@ -29,6 +33,7 @@ public class SerializarEstudantes<T> {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public List<Estudante> desserializar() throws IOException{
         List<Estudante> listaEstudantes = null;
         FileInputStream fio = null;
