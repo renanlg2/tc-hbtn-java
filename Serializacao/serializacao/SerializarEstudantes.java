@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.List;
 
-public class SerializarEstudantes<Estudante> {
+public class SerializarEstudantes<T> {
     private String nomeArquivo;
 
     public SerializarEstudantes(String nomeArquivo) {
