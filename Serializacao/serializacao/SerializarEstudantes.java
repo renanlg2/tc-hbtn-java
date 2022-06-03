@@ -42,7 +42,7 @@ public class SerializarEstudantes<Estudante> {
                 return listaEstudante;
             }
 
-        } catch (IllegalArgumentException e){
+        } catch (FileNotFoundException e){
             System.out.println("Nao foi possivel desserializar");
         } finally {
             if (ois != null){
