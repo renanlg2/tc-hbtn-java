@@ -19,14 +19,13 @@ public class SerializarEstudantes<T> {
             oos.writeObject(lista);
         } catch (FileNotFoundException e) {
             System.out.println("Nao foi possivel serializar");
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("Nao foi possivel serializar");
         } finally {
-            if (oos != null){
+            if (oos != null) {
                 try {
                     oos.close();
-                } catch (IOException e){
+                } catch (IOException e) {
                     System.out.println("Erro ao fechar o arquivo");
                 }
             }
@@ -34,7 +33,7 @@ public class SerializarEstudantes<T> {
     }
 
     @SuppressWarnings("unchecked")
-    public List<Estudante> desserializar() throws IOException{
+    public List<Estudante> desserializar() throws IOException {
         List<Estudante> listaEstudantes = null;
         FileInputStream fio = null;
         ObjectInputStream ois = null;
@@ -44,15 +43,15 @@ public class SerializarEstudantes<T> {
             ois = new ObjectInputStream(fio);
             listaEstudantes = (List<Estudante>) ois.readObject();
             return listaEstudantes;
-        } catch (ClassNotFoundException e){
+        } catch (ClassNotFoundException e) {
             System.out.println("Classe não encontrada");
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Nao foi possivel desserializar");
         } finally {
-            if (ois != null){
+            if (ois != null) {
                 try {
                     ois.close();
-                } catch (IOException e){
+                } catch (IOException e) {
                     System.out.println("Erro ao fechar o arquivo.");
                 }
             }
